@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <!--Page Title-->
+    <title>Apply</title>
+
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" title="Favicon"/>
+
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Namari Color CSS -->
+    <link rel="stylesheet" href="css/namari-color.css">
+
+    <!--Icon Fonts - Font Awesome Icons-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Animate CSS-->
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+
+    <!--Google Webfonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body style="background-color: #e6addfca;">
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status" class="la-ball-triangle-path">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<!--End of Preloader-->
+
+<div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+    <div class="top-border wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"></div>
+    <div class="right-border wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;"></div>
+    <div class="bottom-border wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;"></div>
+    <div class="left-border wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"></div>
+</div>
+
+<div id="wrapper">
+
+    <header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
+        <div id="header" class="nav-collapse">
+            <div class="row clearfix">
+                <div class="col-1">
+
+                    <!--Logo-->
+                    <div id="logo">
+
+                        <!--Logo that is shown on the banner-->
+                        <img src="images/logo.png" id="banner-logo" alt="Landing Page"/>
+                        <!--End of Banner Logo-->
+
+                        <!--The Logo that is shown on the sticky Navigation Bar-->
+                        <img src="images/logo-2.png" id="navigation-logo" alt="Landing Page"/>
+                        <!--End of Navigation Logo-->
+
+                    </div>
+                    <!--End of Logo-->
+
+                    <aside>
+
+                        <!--Social Icons in Header-->
+                        <ul class="social-icons">
+                          
+                            <li>
+                                <a target="_blank" title="YouTube" href="https://www.youtube.com/@FLAmbience">
+                                    <i class="fa fa-youtube fa-1x"></i><span>YouTube</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <!--End of Social Icons in Header-->
+
+                    </aside>
+
+                    <!--Main Navigation-->
+                    <nav id="nav-main">
+                        <ul style="display: flex; justify-content: center; gap: 1rem;"></ul>
+                            
+                            <li>
+                                <a href="https://sailfishclean.github.io/SCC">Home</a>
+                            </li>
+
+
+                            
+                           
+                        </ul>
+                    </nav>
+                    <!--End of Main Navigation-->
+
+                    <div id="nav-trigger"><span></span></div>
+                    <nav id="nav-mobile"></nav>
+
+                </div>
+            </div>
+        </div>
+        
+        <!--End of Header-->
+
+        <!--Banner Content-->
+
+    </header>
+
+    <!--Main Content Area-->
+    <main id="content" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
+
+      <h2 class="contact-title"></h2>
+      <h2 class="contact-title"></h2>
+      <h2 class="contact-title"></h2>
+      <h2 class="contact-title"></h2>
+
+        <section class="donation-section">
+            <div class="donation-container">
+              <h3 class="donation-title">Decentralization</h3>
+              <p class="donation-description">
+                <h2>Support grassroots businesses?</h2>A decentralized currency behooves the people; please consider donating to our Coinbase wallet!
+              </p>
+              <div class="wallet-display">
+                <p class="wallet-label">our wallet</p>
+                <p style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;" class="wallet-address" id="coinbase-wallet">0xBF1Cc482F51F500eAcd6955776d4D921d8a43380</p>
+                <button class="copy-button" onclick="copyToClipboard('coinbase-wallet')">Copy Wallet Address</button>
+              </div>
+              <div class="copy-message" id="copy-message" style="display: none;">
+                successfully copied to clipboard!
+              </div>
+            </div>
+          </section>
+          
+          <script>
+            function copyToClipboard(walletId) {
+              const walletAddress = document.getElementById(walletId).textContent;
+              navigator.clipboard.writeText(walletAddress).then(() => {
+                const copyMessage = document.getElementById('copy-message');
+                copyMessage.style.display = 'block';
+                setTimeout(() => {
+                  copyMessage.style.display = 'none';
+                }, 2000);
+              });
+            }
+          </script>
+          
+          <style>
+            body {
+              margin: 0;
+              font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+              background: linear-gradient(135deg, #f0f8ff, #7f7ff5);
+              height: 100vh;
+              display: relative;
+              justify-content: center;
+              align-items: center;
+            }
+          
+            .donation-section {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              padding: 1rem;
+            }
+          
+            .donation-container {
+              background: #ffffffd9; /* Semi-transparent white */
+              border: 2px solid #ddd;
+              border-radius: 8px;
+              padding: 2rem;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+              text-align: center;
+              max-width: 500px;
+              width: 90%;
+              backdrop-filter: blur(6px); /* Optional: adds a blur effect behind the box */
+            }
+          
+            .donation-title {
+              font-size: 1.8rem;
+              color: #333;
+              margin-bottom: 1rem;
+            }
+          
+            .donation-description {
+              font-size: 1.2rem;
+              color: #555;
+              margin-bottom: 1.5rem;
+            }
+          
+            .wallet-display {
+              margin-top: 1rem;
+            }
+          
+            .wallet-label {
+              font-size: 1rem;
+              color: #666;
+              margin-bottom: 0.5rem;
+            }
+          
+            .wallet-address {
+              font-family: monospace;
+              font-size: 1.1rem;
+              color: #333;
+              background-color: #ff95f42d;
+              padding: 0.5rem;
+              border-radius: 14px;
+              display: inline-block;
+              margin-bottom: 0.5rem;
+            }
+          
+            .copy-button {
+              padding: 0.6rem 1.2rem;
+              background-color: #a478d4;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              font-size: 1rem;
+              transition: background-color 0.3s ease;
+            }
+          
+            .copy-button:hover {
+              background-color: #6600d44d;
+            }
+            .copy-message {
+                margin-top: 1rem;
+                font-size: 0.9rem;
+                color: rgb(139, 0, 125);
+                font-weight: bold;
+                position: relative;
+                animation: textGlow 1.5s ease-in-out infinite, slideDown 1s ease-out forwards;
+              }
+              
+              /* Glowing Text Effect */
+              @keyframes textGlow {
+                0% {
+                  text-shadow: 0 0 5px rgba(72, 0, 255, 0.7), 0 0 10px rgba(174, 0, 255, 0.7), 0 0 15px rgba(255, 140, 0, 0.7);
+                }
+                50% {
+                  text-shadow: 0 0 10px rgb(132, 0, 255), 0 0 20px rgb(0, 34, 255), 0 0 30px rgb(132, 0, 255);
+                }
+                100% {
+                  text-shadow: 0 0 5px rgba(93, 0, 255, 0.7), 0 0 10px rgba(179, 0, 255, 0.7), 0 0 15px rgba(242, 0, 255, 0.7);
+                }
+              }
+              
+              /* Slide-down Animation */
+              @keyframes slideDown {
+                from {
+                  opacity: 0;
+                  transform: translateY(-20px); /* Starts above */
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0); /* Ends at the normal position */
+                }
+              }
+          </style>
+
+          </section>
+
+       
+        
+
+    </main>
+    <!--End of Main Content Area-->
+    
+
+        
+    
+        <!-- Include JavaScript resources -->
+        <script src="js/jquery.1.8.3.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/featherlight.min.js"></script>
+        <script src="js/featherlight.gallery.min.js"></script>
+        <script src="js/jquery.enllax.min.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/jquery.stickyNavbar.min.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/images-loaded.min.js"></script>
+        <script src="js/lightbox.min.js"></script>
+        <script src="js/site.js"></script>
+        <script src="js/contact.js"></script>
+        
+        
+        </body>
+        </html>

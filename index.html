@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <!--Page Title-->
+    <title>Sailfish Cleaning</title>
+
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" title="Favicon"/>
+
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Namari Color CSS -->
+    <link rel="stylesheet" href="css/namari-color.css">
+
+    <!--Icon Fonts - Font Awesome Icons-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Animate CSS-->
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+
+    <!--Google Webfonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    
+
+    <style>
+        #typing-text, #typing-subtext {
+            display: inline-block;
+            transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+            color:#ffffffb1
+            
+        }
+        #typing-subtext {
+            display: inline-block;
+            transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+            color:#000000
+            
+        }
+        
+    
+    </style>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const element = document.getElementById("typing-text");
+            const words = ["sailfish cleaning & concierge", "live clean, live well"];
+            const subElement = document.getElementById("typing-subtext");
+            const subWords = ["proudly serving the Jensen Beaches & Hutchinson Islands", "backed by organic chemists, neuroscientists & decades of experience."];
+
+            // Adjust font size for mobile view
+            function adjustFontSize() {
+                if (window.innerWidth <= 768) { // Mobile view
+                    element.style.fontSize = "18px";
+                    subElement.style.fontSize = "14px";
+                } else { // Desktop view
+                    element.style.fontSize = "";
+                    subElement.style.fontSize = "";
+                }
+            }
+
+            window.addEventListener("resize", adjustFontSize);
+            adjustFontSize(); // Initial call to set the font size
+            let wordIndex = 0;
+            let subWordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let pauseEnd = false; // To pause after typing
+        
+            function type() {
+                const word = words[wordIndex];
+                const subWord = subWords[subWordIndex];
+        
+                if (!isDeleting && !pauseEnd) {
+                    // Typing
+                    element.textContent = word.substring(0, charIndex + 1);
+                    subElement.textContent = subWord.substring(0, charIndex + 1);
+                    element.style.opacity = 1;
+                    subElement.style.opacity = 1;
+                    charIndex++;
+        
+                    if (charIndex === Math.max(word.length, subWord.length)) {
+                        pauseEnd = true; // Pause when fully typed
+                        setTimeout(() => {
+                            pauseEnd = false;
+                            isDeleting = true;
+                            type();
+                        }, 1700); // Pause duration (1.7 seconds)
+                        return;
+                    }
+                } else if (isDeleting) {
+                    // Deleting
+                    element.textContent = word.substring(0, charIndex - 1);
+                    subElement.textContent = subWord.substring(0, charIndex - 1);
+                    element.style.opacity = charIndex > 0 ? 1 : 0.5; // Subtle fade
+                    subElement.style.opacity = charIndex > 0 ? 1 : 0.5;
+                    charIndex--;
+        
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        subWordIndex = (subWordIndex + 1) % subWords.length;
+                    }
+                }
+                // Adjust typing and deleting speed for smoothness
+                setTimeout(type, isDeleting ? 80 : 62); // Slightly slower and consistent
+            }
+        
+            type();
+        });
+    </script>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status" class="la-ball-triangle-path">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<!--End of Preloader-->
+
+<div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+    <div class="top-border wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"></div>
+    <div class="right-border wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;"></div>
+    <div class="bottom-border wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;"></div>
+    <div class="left-border wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"></div>
+</div>
+
+<div id="wrapper">
+
+    <header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
+        <div id="header" class="nav-collapse">
+            <div class="row clearfix">
+                <div class="col-1">
+
+                    <!--Logo-->
+                    <div id="logo">
+
+                        <!--Logo that is shown on the banner-->
+                        <img src="images/logo.png" id="banner-logo" alt="Landing Page"/>
+                        <!--End of Banner Logo-->
+
+                        <!--The Logo that is shown on the sticky Navigation Bar-->
+                        <img src="images/logo-2.png" id="navigation-logo" alt="Landing Page"/>
+                        <!--End of Navigation Logo-->
+
+                    </div>
+                    <!--End of Logo-->
+
+                    <aside>
+
+                        
+
+                    </aside>
+
+                    <!--Main Navigation-->
+                    <nav id="nav-main">
+                        <ul>
+                            <li>
+                                <a href="#banner">Home</a>
+                            </li>
+                            
+                            <li>
+                                <a href="#services">About</a>
+                            </li>
+
+                            <li>
+                                <a href="#testimonials">Departments</a>
+                            </li>
+
+                            <li>
+                                <a href="#pricing">Rates</a>
+                            </li>
+
+                            
+
+                        </ul>
+                    </nav>
+                    <!--End of Main Navigation-->
+
+                    <div id="nav-trigger"><span></span></div>
+                    <nav id="nav-mobile"></nav>
+
+                </div>
+            </div>
+        </div><!--End of Header-->
+
+        <!--Banner Content-->
+        <div id="banner-content" class="row clearfix">
+
+            <div class="col-38">
+
+                <div class="section-heading">
+                    <h1><span id="typing-text"></span></h1>
+                    <h2><span id="typing-subtext"></span></h2>
+                </div>
+
+                <!--Call to Action-->
+                <a href="consult.html" class="button">CONSULT TODAY</a>
+                <!--End Call to Action-->
+
+            </div>
+
+        </div><!--End of Row-->
+    </header>
+
+    <h2 class="section-title"></h2>
+
+    <!--Main Content Area-->
+    <main id="content">
+
+        <!--Introduction-->
+        <section id="" class="introduction scrollto">
+
+            <div class="row clearfix">
+
+                
+
+                <div class="col-2-3">
+
+                    <!--Icon Block-->
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.1s">
+                        <!--Icon-->
+                        <div class="icon">
+                            <i class="fa fa-check-circle fa-2x"></i>
+                        </div>
+                        <!--Icon Block Description-->
+                        <div class="icon-block-description">
+                            <h4>Tailored</h4>
+                            <p>Every corner gets the 
+                                attention it deserves</p>
+                        </div>
+                    </div>
+                    <!--End of Icon Block-->
+
+
+                     <!--Icon Block-->
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.3s">
+                        <!--Icon-->
+                         <div class="icon">
+                            <i class="fa fa-flask fa-2x"></i>
+                         </div>
+                        <!--Icon Block Description-->
+                         <div class="icon-block-description">
+                            <h4>Organic Safety</h4>
+                             <p>We know the proper solution for the job; always safe for family, pets, plants & environment</p>
+                        </div>
+                      </div>
+                    <!--End of Icon Block-->
+
+                    <!--Icon Block-->
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.1s">
+                        <!--Icon-->
+                        <div class="icon">
+                            <i class="fa fa-bell fa-2x"></i>
+                        </div>
+                        <!--Icon Block Description-->
+                        <div class="icon-block-description">
+                            <h4>Concierge</h4>
+                            <p>Premium services for priority concierge assistance</p>
+                        </div>
+                    </div>
+                    <!--End of Icon Block-->
+
+                    <!--Icon Block-->
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.3s">
+                        <!--Icon-->
+                        <div class="icon">
+                            <i class="fa fa-universal-access fa-2x"></i>
+                        </div>
+                        <!--Icon Block Description-->
+                        <div class="icon-block-description">
+                            <h4>Ease of Use</h4>
+                            <p>Solutions & services: accessible, delivered</p>
+                        </div>
+                    </div>
+                    <!--End of Icon Block-->
+
+                    <!--Icon Block-->
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
+                        <!--Icon-->
+                        <div class="icon">
+                            <i class="fa fa-bath fa-2x"></i>
+                        </div>
+                        <!--Icon Block Description-->
+                        <div class="icon-block-description">
+                            <h4>Residential</h4>
+                            <p>A regular deep clean for your home to always feel fresh
+                                </p>
+                        </div>
+                    </div>
+                    <!--End of Icon Block-->
+
+                    <!--Icon Block-->
+                    <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
+                        <!--Icon-->
+                        <div class="icon">
+                            <i class="fa fa-gift fa-2x"></i>
+                        </div>
+                        <!--Icon Block Description-->
+                        <div class="icon-block-description">
+                            <h4>Events</h4>
+                            <p>Just enjoy your time</p>
+                        </div>
+                    </div>
+                    <!--End of Icon Block-->
+
+                </div>
+
+                <div class="col-3">
+                    <div class="section-heading">
+                        <h3 style="text-align: center;">PROFESSIONAL CARE</h3>
+                        <h1 style="text-align: center;" class="section">A Careful Clean</h1>
+                        <p class="section-subtitle"></p>
+                        <img src="images/gifs/clean-lady.gif" alt="neumes" style="text-align: right;"/>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+        <!--End of Introduction-->
+
+      
+
+
+<!--Content Section-->
+<div id="services" class="scrollto clearfix">
+
+    <div class="row no-padding-bottom clearfix">
+
+    
+
+        <!--Content Left Side-->
+        <div class="col-3">
+            <!--User Testimonial-->
+            <blockquote class="testimonial text-center bigtest">
+                <h3>Concierge tailored to the <span style="color: #2b678c;">Treasure Coast</span></h3>
+                    <h2 class="section-title"></h2>
+                <code>Your professional concierge services</code>
+            </blockquote>
+            <!-- End of Testimonial-->
+
+        </div>
+        <!--End Content Left Side-->
+
+         
+        <div class="col-3">
+            <img src="images/gifs/funswirl-2.gif" alt="Dancer"/>
+        </div>
+
+
+        <!--Content of the Right Side-->
+        <div class="col-3">
+            <div class="section-heading text-right">
+                <h3>INTERDISCIPLINARY APPROACH</h3>
+                <p class="section-subtitle"></p>
+            </div>
+
+            <code>
+                
+                <p style="text-align: right">Deep Cleans.</p>
+
+                <p style="text-align: right">Property Management.</p>
+            
+                <p style="text-align: right">Private Concierge.</p>
+
+                <p style="text-align: right"><i>Neuro-Concierge.</i></p>
+
+            </code>
+            
+            
+                
+                <a href="about.html" class="button traditional-link" style="float: right;">
+                    READ MORE <i class="fa fa-play" aria-hidden="true"></i>
+                </a>
+
+            
+        </div>
+        <!--End Content Right Side-->
+        
+
+    </div>
+    
+    <h2 class="section-title"></h2>
+  
+    
+</div>
+<!--End of Content Section-->
+
+
+<h2 class="section-title"></h2>
+<h2 class="section-title"></h2>
+<h2 class="section-title"></h2>
+
+
+       
+
+        <!--Testimonials-->
+        <aside id="testimonials" class="scrollto text-center" data-enllax-ratio=".2">
+
+            <div class="row clearfix">
+
+                <div class="section-heading">
+                    <h3>CHAIRS</h3>
+                    <h2 class="section-title"> Team Leads</h2>
+                </div>
+
+                <!--User Testimonial-->
+                <blockquote class="col-3 testimonial classic">
+                    <a><img src="images/user-images/user-2.jpg" alt="User"/></a>
+                    <p>Founder & Department Coordinator</p>
+
+
+                    <footer>Shawna | MCA, MBA</footer>
+
+                </blockquote>
+                <!-- End of Testimonial-->
+
+
+                <!--User Testimonial-->
+                <blockquote class="col-3 testimonial classic">
+                    <img src="images/user-images/user-3.jpg" alt="User"/>
+                    <p>Neuro-concierge Manager</p>
+
+                    
+                    <footer>Dale | PI, BSc-N</footer>
+
+                </blockquote>
+                <!-- End of Testimonial-->
+
+                <!--User Testimonial-->
+                <blockquote class="col-3 testimonial classic">
+                    <img src="images/user-images/user-1.jpg" alt="User"/>
+                    <p>Property & Project Manager</p>
+
+
+                    <footer>Jimbo | Foreman</footer>
+
+                </blockquote>
+                <!-- End of Testimonial-->
+
+            </div>
+
+        </aside>
+        <!--End of Testimonials-->
+
+        <h2 class="section-title"></h2>
+        <h2 class="section-title"></h2>
+
+        
+                <!-- Pricing Tables -->
+    <section id="pricing" class="secondary-color text-center scrollto clearfix">
+        <div class="row clearfix">
+    
+            <div class="section-heading">
+                <h3>your choice</h3>
+                <h2 class="section-title"></h2>
+            </div>
+    
+            <!-- Pricing Block -->
+            <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="pricing-block-content rounded-box">
+                    <h3>Prim</h3>
+                    <p class="pricing-sub">Classic Deep Clean</p>
+                    <div class="pricing">
+                        <div class="price"><span>$</span>80/hr</div>
+                        <p><code>Classic clean without harmful chemicals</code></p>
+                    </div>
+                    <ul>
+                        <li>Indoor cleaning & detailing</li>
+                        <li>Residential | pet friendly!</li>
+                        <li><strong>Monthly</strong> schedule specials</li>
+                        
+                        
+                    </ul>
+                    <a href="consult.html" class="button">APPLY</a>
+                </div>
+            </div>
+            <!-- End Pricing Block -->
+    
+            <!-- Pricing Block -->
+            <div class="pricing-block featured col-3 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="pricing-block-content rounded-box">
+                    <h3>Proper</h3>
+                    <p class="pricing-sub">Property Management</p>
+                    <div class="pricing">
+                        <div class="price"><span>$</span>/quote</div>
+                        <p><code>Go beyond with full-acreage property care</code></p>
+                    </div>
+                    <ul>
+                        <li>Full priority schedule <i>Prim</i> services</li>
+                        <li>Native flora groundskeeping</li>
+                        <li>Trades-experts networking</li>
+                        <li><strong>Yearly</strong> schedule specials</li>
+                        
+                    </ul>
+                    <a href="consult.html" class="button">QUOTE</a>
+                </div>
+            </div>
+            <!-- End Pricing Block -->
+    
+            <!-- Pricing Block -->
+            <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="pricing-block-content rounded-box">
+                    <h3>Concierge</h3>
+                    <p class="pricing-sub">Peace of Mind</p>
+                    <div class="pricing">
+                        <div class="price"><span>$</span>200/hr</div>
+                        <p><code>Partnered decades of private concierge</code></p>
+                    </div>
+                    <ul>
+                        <li>On-call concierge assistance</li>
+                        <li>Personalized lifestyle management</li>
+                        <li><strong>Lmtd.</strong> availability <i>neuro-upgrade</i></li>
+                    
+                    </ul>
+                    <a href="consult.html" class="button">APPLY</a>
+                </div>
+            </div>
+            <!-- End Pricing Block -->
+    
+        </div>
+    </section>
+    <!-- End of Pricing Tables -->
+    
+    <!-- Add CSS for Styling -->
+    <style>
+        /* Global Button Styling */
+        .button {
+            display: inline-block;
+            background-color: #a478d4;
+            color: #fff;
+            font-size: 16px;
+            padding: 12px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+    
+        /* Button Hover Effect (Global) */
+        .button:hover {
+            background-color: #11100f;
+        }
+    
+        /* Pricing Section Specific Styling */
+        #pricing {
+            padding: 50px 0;
+            background-color: #f2bdff34;
+        }
+    
+        #pricing .section-heading h3 {
+            font-size: 24px;
+            color: #555;
+            text-transform: uppercase;
+        }
+    
+        #pricing .section-title {
+            font-size: 36px;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+    
+        #pricing .pricing-block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+    
+        #pricing .pricing-block-content {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+    
+        /* Hover Effects for Pricing Blocks */
+        #pricing .pricing-block-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        #pricing .pricing h3 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+    
+        #pricing .pricing .price {
+            font-size: 40px;
+            font-weight: bold;
+            color: #352b23;
+        }
+    
+        #pricing .pricing-sub {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+    
+        /* Styling for the list of features */
+        #pricing ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+    
+        #pricing ul li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+    
+        /* Featured Pricing Block Styling */
+        #pricing .pricing-block.featured .pricing-block-content {
+            background-color: #ffffff3a;
+            border: 2px solid #d269564c;
+        }
+    
+        #pricing .pricing-block.featured .button {
+            background-color: #8b419db0;
+        }
+    
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            #pricing .pricing-block {
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+    
+            #pricing .pricing-block-content {
+                width: 100%;
+            }
+        }
+    </style>
+
+
+    </main>
+    <!--End Main Content Area-->
+
+
+    <!--Footer-->
+    <footer id="landing-footer" class="clearfix">
+        <div class="row clearfix">
+
+            <p id="copyright" class="col-2"> <a href="example@gmail.com"></a></p>
+
+            <!--Social Icons in Footer-->
+            <ul class="col-2 social-icons">
+                <li>
+                    <a target="_blank" title="Youtube" href="https://www.youtube.com/@FLAmbience">
+                        <i class="fa fa-youtube fa-1x"></i><span>Youtube</span>
+                    </a>
+                </li>
+                
+
+                <li>
+                    <a target="_blank" title="Crypto" href="donate.html">
+                        <i class="fa fa-btc fa-1x"></i><span>Crypto</span>
+                    </a>
+                </li>
+                
+                
+            </ul>
+            <!--End of Social Icons in Footer-->
+        </div>
+    </footer>
+    <!--End of Footer-->
+
+</div>
+
+<!-- Include JavaScript resources -->
+<script src="js/jquery.1.8.3.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/featherlight.min.js"></script>
+<script src="js/featherlight.gallery.min.js"></script>
+<script src="js/jquery.enllax.min.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.stickyNavbar.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/images-loaded.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+<script src="js/site.js"></script>
+
+
+</body>
+</html>
